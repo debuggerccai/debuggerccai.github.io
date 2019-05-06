@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="蔡良武在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Cai&#39;s" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        hexo-Anisina 使用心得｜Cai&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/07/04/hexo/hexo-Anisina使用心得/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('http://www.lwcai.cn/lion-blur-bg.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Cai&#39;s
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+								
+							
+						
+                    
+                        
+							
+                        <li>
+                            <a href="/tags/">tags</a>
+                        </li>
+							
+						
+                    
+					
+					
+						<li>
+							<a href="/about/简历.pdf">ABOUT ME</a>
+						</li>
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="http://www.lwcai.cn/hexo.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://www.lwcai.cn/hexo.jpgundefined')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>hexo-Anisina 使用心得</h1>
+                    
+                    <span class="meta">
+                         作者 lwcai
+                        <span>
+                          日期 2017-07-04
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            hexo-Anisina 使用心得
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>1.个人博客采用<a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a>快速搭建，使用主题为<a href="http://haojen.github.io/2017/05/09/Anisina-%E4%B8%AD%E6%96%87%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">Anisina</a>，主题原作者编写的中文使用教程请敲<a href="http://haojen.github.io/2017/05/09/Anisina-%E4%B8%AD%E6%96%87%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">这里</a>,也可以选择其他<a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a></p>
+<p>2.本文内容主要在于通过分析layout布局模板和config配置文件，更好理解Anisina主题的使用方法</p>
+<p>3.对<code>works.ejs</code>文件做了部分修改，<code>config.yml</code>新增Project Info。<a href="https://debuggerccai.github.io/2017/07/14/hexo-Anisina%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/#index" target="_blank" rel="noopener">详情</a></p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml			#配置文件夹</span><br><span class="line">├── package.json		#应用程序的信息</span><br><span class="line">├── scaffolds			#模板文件夹</span><br><span class="line">├── source				#资源文件夹</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes				#主题文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init [folder]			#新建一个网站</span><br><span class="line"></span><br><span class="line">$ hexo new [layout] &lt;title&gt;		#新建一篇文章</span><br><span class="line"></span><br><span class="line">$ hexo g						#生成静态文件</span><br><span class="line"></span><br><span class="line">$ hexo clean					#清空缓存</span><br><span class="line"></span><br><span class="line">$ hexo server					#运行服务器</span><br><span class="line"></span><br><span class="line">$ hexo d						#部署到git仓库</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Anisina"><a href="#Anisina" class="headerlink" title="Anisina"></a>Anisina</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/Haojen/hexo-theme-Anisina.git</span><br><span class="line">clone`下来后将文件拷贝至`hexo init [folder]/themes</span><br></pre></td></tr></table></figure>
+<h2 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.将Anisina文件拷贝到themes文件</span><br><span class="line"></span><br><span class="line">2.themes: Anisina</span><br><span class="line"></span><br><span class="line">3.或者直接拷贝 Anisina 文件夹下的 `_config.yml` 替换 hexo 默认的 _config.yml</span><br></pre></td></tr></table></figure>
+<h2 id="3-配置文件-config-yml"><a href="#3-配置文件-config-yml" class="headerlink" title="3.配置文件_config.yml"></a>3.配置文件<code>_config.yml</code></h2><p>配置文件采用<code>key: value</code>的形式,<code>:</code>后面一定要带空格，否则error。可以拷贝key之后ctrl + f 查找快速修改配置信息。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title:  # your blog title name</span><br><span class="line">author:  # your name</span><br><span class="line">header-img: 	# background image</span><br><span class="line">favicon: 	# website icon</span><br><span class="line"></span><br><span class="line"># SNS settings</span><br><span class="line">github_username: # Id of a social account</span><br><span class="line"></span><br><span class="line"># Sidebar settings</span><br><span class="line">sidebar-about-description: 	# your individual description</span><br><span class="line">sidebar-avatar:     # your photo</span><br><span class="line"></span><br><span class="line"># 配置git仓库地址，配置完成后每次只需要执行 hexo d 就能将public文件push到仓库</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 	# The repository with you want to upload </span><br><span class="line">  branch: master</span><br><span class="line">  </span><br><span class="line"># 文章header-img背景图片，url采用&apos;cdn-url&apos; + &apos;header-img&apos;拼接的方式。</span><br><span class="line">cdn-url:  http://ot0jk0h4v.bkt.clouddn.com/ # 你的CDN地址</span><br><span class="line"></span><br><span class="line"># 博文默认图片(如果不设置这一项, 博文标题的图片默认是灰色的)</span><br><span class="line">post-default-img: post-default.jpg</span><br><span class="line"></span><br><span class="line"># 友链, 请务必按以下格式书写</span><br><span class="line">friends: [</span><br><span class="line">	&#123;</span><br><span class="line">		title: &quot;your friend title&quot;,</span><br><span class="line">		href: &quot;your fiend path&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		title: &quot;your friend title 2&quot;,</span><br><span class="line">		href: &quot;your friend path 2&quot;</span><br><span class="line">	&#125;</span><br><span class="line">] </span><br><span class="line"></span><br><span class="line"># 页面nav配置，这里重写了nav.ejs模板</span><br><span class="line">menu:</span><br><span class="line">  Home: /</span><br><span class="line">  Tags: /tags</span><br><span class="line">  My Works: /work</span><br><span class="line">  </span><br><span class="line"># my works Project Info	同样，重写了works.ejs模板</span><br><span class="line">project: [</span><br><span class="line">     &#123;</span><br><span class="line">         title: , </span><br><span class="line">         subTitle: ,</span><br><span class="line">         data: ,</span><br><span class="line">         img_link: ,</span><br><span class="line">         tags: [],</span><br><span class="line">         direction: ,</span><br><span class="line">         link: /#</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="4-创建一个-Tags-导航页面"><a href="#4-创建一个-Tags-导航页面" class="headerlink" title="4.创建一个 Tags 导航页面"></a>4.创建一个 Tags 导航页面</h2><ol>
+<li>运行命令:<code>hexo new page &quot;Tags&quot;</code> , 这会在博客的 <code>source</code> 目录下生成一个名为 <code>Tags</code> 的文件夹, 里面会有一个 <code>index.md</code> 格式的页面,如果没有请手动创建.</li>
+<li>然后打开 <code>yourblog/source</code> 文件夹 , 找到 <code>Tags/index.md</code> 这个文件, 然后设置在两条的<code>---</code>里面, 指定一个 <code>layout: tags</code>值.注意 key 和 value 之间的空格</li>
+<li>然后运行命令,重新生成博客内容: <code>hexo clean &amp;&amp; hexo g</code> , 然后可以运行 <code>hexo serve</code> 在本地查看效果</li>
+</ol>
+<h2 id="5-博文"><a href="#5-博文" class="headerlink" title="5.博文"></a>5.博文</h2><p>运行命令:<code>hexo new post folder</code>,这会在source/_posts</p>
+<p>以下是博文配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: post</span><br><span class="line">title: &quot;Hola 2016&quot;</span><br><span class="line">subtitle: &quot;hi, I&apos;m haojen ma&quot;</span><br><span class="line">date: 2016-05-26 06:00	# 博文创建时会自动生成</span><br><span class="line">author: &quot;Haojen Ma&quot;</span><br><span class="line">header-img: &quot;img/post-default.jpg&quot;</span><br><span class="line">cdn: &apos;header-on&apos;</span><br><span class="line">tags:</span><br><span class="line">	- Movies</span><br><span class="line">	- Life</span><br><span class="line">top: num	#可将博文置顶，num值越大优先级越高</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h4 id="创建一条博文"><a href="#创建一条博文" class="headerlink" title="创建一条博文"></a>创建一条博文</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;your-post-name&quot;</span><br></pre></td></tr></table></figure>
+<p>创建一条博文的同时，也会创建一个以该博文名命名的文件夹:</p>
+<h4 id="博文标题背景图片"><a href="#博文标题背景图片" class="headerlink" title="博文标题背景图片"></a>博文标题背景图片</h4><blockquote>
+<p>header-img: “<a href="http://sometest.png/" target="_blank" rel="noopener">http://sometest.png</a>“</p>
+</blockquote>
+<p>如果你没有设置的话，会默认使用 <code>_config.yml</code> 下 <code>post-default-img</code>指定的背景图像</p>
+<h2 id="6-创建My-Works界面"><a href="#6-创建My-Works界面" class="headerlink" title="6.创建My Works界面"></a>6.创建My Works界面</h2><p>运行命令:<code>hexo new page work</code>,这会在<code>source</code>目录下生成一个<code>work</code>文件夹</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: my works</span><br><span class="line">date: 2017-07-17 17:34:13</span><br><span class="line">layout: works</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="修改works-ejs模板"><a href="#修改works-ejs模板" class="headerlink" title="修改works.ejs模板"></a>修改works.ejs模板</h3><p>打开<code>themes/layout/works.ejs</code>文件，重写<code>class=&quot;container&quot;</code>标签内代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;section class=&quot;row&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;col-sm-10 col-sm-offset-1</span><br><span class="line">                        col-md-8 col-md-offset-2</span><br><span class="line">                      works-area&quot;&gt;</span><br><span class="line">                &lt;% for(var obj of config.project)&#123; %&gt;</span><br><span class="line">                &lt;div class=&quot;works-item&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;title&quot;&gt;</span><br><span class="line">                        &lt;h3&gt;</span><br><span class="line">                            &lt;%= obj.title %&gt;</span><br><span class="line">                        &lt;/h3&gt;</span><br><span class="line">                        &lt;span class=&quot;title-date text-muted&quot;&gt;</span><br><span class="line">                            &lt;%= obj.data %&gt;</span><br><span class="line">                        &lt;/span&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;works-item-img&quot;&gt;</span><br><span class="line">                        &lt;img src=&quot;&lt;%= obj.img_link %&gt;&quot;&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;works-content&quot;&gt;</span><br><span class="line">                        &lt;% if(obj.tags)&#123; %&gt;</span><br><span class="line">                            &lt;div class=&quot;use text-warning&quot;&gt;</span><br><span class="line">                                &lt;% for (var arrayVal in obj.tags )&#123; %&gt;</span><br><span class="line">                                &lt;span&gt;</span><br><span class="line">                                        &lt;%= obj.tags[arrayVal] %&gt;</span><br><span class="line">                                    &lt;/span&gt;</span><br><span class="line">                                &lt;% &#125; %&gt;</span><br><span class="line">                            &lt;/div&gt;</span><br><span class="line">                        &lt;% &#125; %&gt;　</span><br><span class="line"></span><br><span class="line">                        &lt;% if(obj.subTitle)&#123; %&gt;</span><br><span class="line">                            &lt;p class=&quot;subtitle&quot;&gt; &lt;%= obj.subTitle %&gt; &lt;/p&gt;</span><br><span class="line">                        &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;% if(obj.direction)&#123; %&gt;</span><br><span class="line">                            &lt;p class=&quot;text-muted&quot;&gt; &lt;%= obj.direction %&gt; &lt;/p&gt;</span><br><span class="line">                        &lt;% &#125; %&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;footer clearfix&quot;&gt;</span><br><span class="line">                        &lt;a class=&quot; btn btn-default&quot; href=&quot;&lt;%= obj.link %&gt;&quot; target=&quot;_blank&quot;&gt; Open</span><br><span class="line">                            it&lt;/a&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;% &#125; %&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/section&gt;</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>从上面的ejs模板可以看出，在浏览器渲染数据时，会先查找<code>_config.yml</code>文件中的<code>key</code>为<code>project</code>的数组</p>
+<p>example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">project: [</span><br><span class="line">     &#123;</span><br><span class="line">         title: , </span><br><span class="line">         subTitle: ,</span><br><span class="line">         data: ,</span><br><span class="line">         img_link: ,</span><br><span class="line">         tags: [],</span><br><span class="line">         direction: ,</span><br><span class="line">         link: /#</span><br><span class="line">     &#125;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+<h2 id="7-博文置顶"><a href="#7-博文置顶" class="headerlink" title="7.博文置顶"></a>7.博文置顶</h2><p>可能是我技术小白，没有在作者的源码中找到博文置顶的功能，遂自己参考网络资料对<code>node_modules/hexo-generator-index/lib/generator.js</code>进行了修改，具体可参考<a href="../post博文置顶功能/">博文</a></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/07/04/hexo/post博文置顶功能/" data-toggle="tooltip" data-placement="top" title="post博文置顶功能">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在开头"><span class="toc-text">写在开头</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Hexo？"><span class="toc-text">什么是 Hexo？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建站"><span class="toc-text">建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Anisina"><span class="toc-text">Anisina</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装"><span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-修改"><span class="toc-text">2.修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置文件-config-yml"><span class="toc-text">3.配置文件_config.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-创建一个-Tags-导航页面"><span class="toc-text">4.创建一个 Tags 导航页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-博文"><span class="toc-text">5.博文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一条博文"><span class="toc-text">创建一条博文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#博文标题背景图片"><span class="toc-text">博文标题背景图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-创建My-Works界面"><span class="toc-text">6.创建My Works界面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改works-ejs模板"><span class="toc-text">修改works.ejs模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-博文置顶"><span class="toc-text">7.博文置顶</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/cccccai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/2503280032">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/debuggerccai">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Cai&#39;s 2019
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://www.lwcai.cn/photo.jpg">
+</body>
+
+</html>
