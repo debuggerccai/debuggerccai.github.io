@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        奇淫技巧｜Cai&#39;s blog
+        vue-cli3.x config｜Cai&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/09/06/javascript/奇淫技巧/">
+    <link rel="canonical" href="http://yoursite.com/2019/04/22/vue/vue-cli3-x配置/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -154,17 +154,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>奇淫技巧</h1>
+                    <h1>vue-cli3.x config</h1>
                     
                     <span class="meta">
                          作者 lwcai
                         <span>
-                          日期 2017-09-06
+                          日期 2019-04-22
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
                         
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            奇淫技巧
+            vue-cli3.x config
         </span>
     </div>
 </header>
@@ -184,44 +184,43 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="javaScript-奇淫技巧"><a href="#javaScript-奇淫技巧" class="headerlink" title="javaScript 奇淫技巧"></a>javaScript 奇淫技巧</h2><p>1.论如何最佳的让两个整数交换数值</p>
-<p>常规办法:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a=1,b=2;</span><br><span class="line">a += b;</span><br><span class="line">b = a -b;</span><br><span class="line">a -= b;</span><br></pre></td></tr></table></figure>
-<p>ES6:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a=1,b=2;</span><br><span class="line">[a,b] = [b,a];</span><br></pre></td></tr></table></figure>
-<hr>
-<p>2.如何优雅的实现金钱格式化：1234567890 –&gt; 1,234,567,890</p>
-<p>正则魔法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var test1 = &apos;1234567890&apos;</span><br><span class="line">var format = test1.replace(/\B(?=(\d&#123;3&#125;)+(?!\d))/g, &apos;,&apos;)</span><br><span class="line"></span><br><span class="line">console.log(format) // 1,234,567,890</span><br></pre></td></tr></table></figure>
-<p>toLocaleString() 方法,把数组转换为本地字符串。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1234567890).toLocaleString(&apos;en-US&apos;);</span><br></pre></td></tr></table></figure>
-<hr>
-<p>3.ES6 数组去重</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[...new Set([1,&quot;1&quot;,1,1,2,3])];</span><br></pre></td></tr></table></figure>
-<hr>
-<p>4.用最短的代码实现一个长度为n且值都为m的数组</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Array(6).fill(8);</span><br></pre></td></tr></table></figure>
-<hr>
-<p>5.取出一个数组中的最大值和最小值</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411]; </span><br><span class="line">var maxInNumbers = Math.max.apply(Math, numbers); </span><br><span class="line">var minInNumbers = Math.min.apply(Math, numbers);</span><br></pre></td></tr></table></figure>
-<hr>
-<p>6.论如何优雅的取随机字符串</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Math.random().toString(16).substring(2) // 13位</span><br><span class="line">Math.random().toString(36).substring(2) // 11位</span><br></pre></td></tr></table></figure>
-<hr>
-<p>7.单行写一个评级组件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;★★★★★☆☆☆☆☆&quot;.slice(5 - rate, 10 - rate);定义一个变量rate是1到5的值</span><br><span class="line">var rate = 2; //&quot;★★☆☆☆&quot;</span><br></pre></td></tr></table></figure>
+                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
+<p>Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：</p>
+<ul>
+<li>通过 <code>@vue/cli</code> 搭建交互式的项目脚手架。</li>
+<li>通过 <code>@vue/cli</code> + <code>@vue/cli-service-global</code> 快速开始零配置原型开发。</li>
+<li>一个运行时依赖 (<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;   - 可升级；</span><br><span class="line">&gt;   - 基于 webpack 构建，并带有合理的默认配置；</span><br><span class="line">&gt;   - 可以通过项目内的配置文件进行配置；</span><br><span class="line">&gt;   - 可以通过插件进行扩展。</span><br><span class="line">&gt; - 一个丰富的官方插件集合，集成了前端生态中最好的工具。</span><br><span class="line">&gt; - 一套完全图形化的创建和管理 Vue.js 项目的用户界面。</span><br><span class="line"></span><br><span class="line">## 安装</span><br><span class="line"></span><br><span class="line">### install</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">npm install -g @vue/cli</span><br><span class="line"># OR</span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<h3 id="version"><a href="#version" class="headerlink" title="version"></a>version</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+<h3 id="create"><a href="#create" class="headerlink" title="create"></a>create</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vue create hello-world</span><br></pre></td></tr></table></figure>
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><ul>
+<li>Install</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span> options ['babel', 'pwd', 'typescript', 'eslint', ...]</span><br><span class="line">vue add @vue/options</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Link<ul>
+<li><a href="https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-babel/README.md" target="_blank" rel="noopener">Babel</a></li>
+<li><a href="https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-eslint/README.md" target="_blank" rel="noopener">ESlint</a></li>
+<li><a href="https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-typescript/README.md" target="_blank" rel="noopener">TypeScript</a></li>
+<li><a href="https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli-plugin-pwa/README.md" target="_blank" rel="noopener">PWA</a></li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置参考"><a href="#配置参考" class="headerlink" title="配置参考"></a>配置参考</h2><ul>
+<li><a href="https://cli.vuejs.org/zh/config/" target="_blank" rel="noopener">传送门</a></li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	publicPath: process.env.NODE_ENV === <span class="string">'production'</span></span><br><span class="line">	    ? <span class="string">'/production-sub-path/'</span></span><br><span class="line">	    : <span class="string">'/'</span>,</span><br><span class="line">	<span class="comment">// 是否开启 eslint 语法检查</span></span><br><span class="line">    lintOnSave: process.env.NODE_ENV !== <span class="string">'production'</span>,</span><br><span class="line">    <span class="comment">// 是否使用包含运行时编译器的 Vue 构建版本</span></span><br><span class="line">  	runtimeCompiler: <span class="literal">true</span>,</span><br><span class="line">  	<span class="comment">// 是否需要 source map, 关闭以加速生产环境构建</span></span><br><span class="line">  	productionSourceMap: <span class="literal">false</span>,</span><br><span class="line">  	<span class="comment">// 完整选项查看 https://webpack.js.org/configuration/dev-server/</span></span><br><span class="line">  	devServer: &#123;</span><br><span class="line">  		host: <span class="string">'0.0.0.0'</span>,</span><br><span class="line">  		hotOnly: <span class="literal">true</span>,</span><br><span class="line">  		open: <span class="literal">true</span>,</span><br><span class="line">  		<span class="comment">// 完整选项查看 https://github.com/chimurai/http-proxy-middleware#proxycontext-config</span></span><br><span class="line">  		proxy: &#123;</span><br><span class="line">  			<span class="string">'/api'</span>: &#123;</span><br><span class="line">		        target: <span class="string">'http://127.0.0.1'</span>,</span><br><span class="line">		        <span class="comment">// ws: true,</span></span><br><span class="line">		        <span class="comment">// changeOrigin: true</span></span><br><span class="line">		      &#125;,</span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;,</span><br><span class="line">  	css: &#123;</span><br><span class="line">  		modules: <span class="literal">false</span>,</span><br><span class="line">  		<span class="comment">// 是否将组件中的 CSS 提取至一个独立的 CSS 文件中, 默认生产环境开启, 开发环境关闭</span></span><br><span class="line">  		extract: process.env.NODE_ENV === <span class="string">'production'</span>,</span><br><span class="line">  		<span class="comment">// 是否为 CSS 开启 source map。设置为 true 之后可能会影响构建的性能</span></span><br><span class="line">  		sourceMap: <span class="literal">false</span>,</span><br><span class="line">  		<span class="comment">// 向 CSS 相关的 loader 传递选项</span></span><br><span class="line">  		loaderOptions: &#123;</span><br><span class="line">  			<span class="comment">// // 给 less-loader 传递选项</span></span><br><span class="line">  			less: &#123;</span><br><span class="line">  				<span class="comment">// @/ 是 src/ 的别名</span></span><br><span class="line">        		<span class="comment">// 所以这里假设你有 `src/variables.scss` 这个文件</span></span><br><span class="line">  				data: <span class="string">`@import "~@/assets.less";`</span></span><br><span class="line">  			&#125;</span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;,</span><br><span class="line">    pages: &#123;</span><br><span class="line">	    index: &#123;</span><br><span class="line">	      <span class="comment">// page 的入口</span></span><br><span class="line">	      entry: <span class="string">'src/main.js'</span>,</span><br><span class="line">	      <span class="comment">// 模板来源</span></span><br><span class="line">	      template: <span class="string">'public/index.html'</span>,</span><br><span class="line">	      <span class="comment">// 在 dist/index.html 的输出</span></span><br><span class="line">	      filename: <span class="string">'index.html'</span>,</span><br><span class="line">	      <span class="comment">// 当使用 title 选项时，</span></span><br><span class="line">	      <span class="comment">// template 中的 title 标签需要是 &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</span></span><br><span class="line">	      title: <span class="string">'Index Page'</span>,</span><br><span class="line">	      <span class="comment">// 在这个页面中包含的块，默认情况下会包含</span></span><br><span class="line">	      <span class="comment">// 提取出来的通用 chunk 和 vendor chunk。</span></span><br><span class="line">	      chunks: [<span class="string">'chunk-vendors'</span>, <span class="string">'chunk-common'</span>, <span class="string">'index'</span>]</span><br><span class="line">	    &#125;,</span><br><span class="line">	    <span class="comment">// 当使用只有入口的字符串格式时，</span></span><br><span class="line">	    <span class="comment">// 模板会被推导为 `public/subpage.html`</span></span><br><span class="line">	    <span class="comment">// 并且如果找不到的话，就回退到 `public/index.html`。</span></span><br><span class="line">	    <span class="comment">// 输出文件名会被推导为 `subpage.html`。</span></span><br><span class="line">	    <span class="comment">// subpage: 'src/main.js'</span></span><br><span class="line">  	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2019/04/22/vue/vue-cli3-x配置/" data-toggle="tooltip" data-placement="top" title="vue-cli3.x config">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2017/07/04/hexo/post博文置顶功能/" data-toggle="tooltip" data-placement="top" title="post博文置顶功能">Next Post &rarr;</a>
+                        <a href="/2017/09/06/javascript/奇淫技巧/" data-toggle="tooltip" data-placement="top" title="奇淫技巧">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -240,7 +239,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javaScript-奇淫技巧"><span class="toc-text">javaScript 奇淫技巧</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#version"><span class="toc-text">version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create"><span class="toc-text">create</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#plugins"><span class="toc-text">plugins</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置参考"><span class="toc-text">配置参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -262,7 +261,7 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#JS" title="JS">JS</a>
+                        <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
                         
                     </div>
                 </section>
