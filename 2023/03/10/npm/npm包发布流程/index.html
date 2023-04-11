@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="蔡良武在 Github 上的个人博客">
+    <meta name="author" content="lwcai">
+    
+    <title>
+        
+            npm 包发布流程 |
+        
+        Tsai&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/pinterest_profile_image.png","favicon":"/images/favicon.png","avatar":"/images/pinterest_profile_image.png","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"gitalk","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"debuggerccai","github_admins":null,"repository":"debuggerccai.github.io","client_id":"b2e936eea8e5cad0fad7","client_secret":"37bc21b4a6ff67c2adadd726f6e713279763d8cb","proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect","前端开发工程师"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/pinterest_profile_image.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Tsai&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/resumes.pdf"
+                            >
+                                ABOUT ME
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/resumes.pdf">ABOUT ME</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">npm 包发布流程</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/pinterest_profile_image.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">lwcai</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-10 15:43:00</span>
+        <span class="mobile">2023-03-10 15:43</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-04-11 23:16:12</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/npm/">npm</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h2 id="创建你的-npm-账号"><a href="#创建你的-npm-账号" class="headerlink" title="创建你的 npm 账号"></a>创建你的 npm 账号</h2><p>在发布一个<code>npm</code>包之前，需要准备一个属于你的<code>npm</code>账号。<a class="link"   target="_blank" rel="noopener" href="https://www.npmjs.com/signup" >注册地址<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="创建-npm-包"><a href="#创建-npm-包" class="headerlink" title="创建 npm 包"></a>创建 npm 包</h2><h3 id="创建你的包文件夹"><a href="#创建你的包文件夹" class="headerlink" title="创建你的包文件夹"></a>创建你的包文件夹</h3><p>一个简单的<code>npm</code>包文件夹，应该包含以下部分：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">├── README.md</span><br><span class="line">├── lib</span><br><span class="line">│   └── index.js</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="关于package-json"><a href="#关于package-json" class="headerlink" title="关于package.json"></a>关于<code>package.json</code></h3><p><code>package.json</code>是一个<code>npm</code>包中的重要文件，有了<code>package.json</code>文件才能将你的包发布到 <code>npm</code>注册表。你可以将<code>package.json</code>文件添加到你的包中，以方便其他人管理和安装。</p>
+<p>通过以下命令创建<code>package.json</code>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+
+<p>以下为<code>package.json</code>中包含的一些常见属性：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my_package&quot;</span><span class="punctuation">,</span> 		<span class="comment">// 包名称</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span> 			<span class="comment">// 关于包的描述信息，如果包目录中包含 README.md，将已 README 为准</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span> 			<span class="comment">// 版本号</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lib/index.js&quot;</span><span class="punctuation">,</span> 	    <span class="comment">// 项目入口文件</span></span><br><span class="line">  <span class="attr">&quot;files&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;lib&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span>				<span class="comment">// 项目中要发布的文件列表</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span> </span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span>						    <span class="comment">// 可执行的脚本命令</span></span><br><span class="line">  <span class="attr">&quot;repository&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;git&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://github.com/monatheoctocat/my_package.git&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span> 						    <span class="comment">// 仓库信息</span></span><br><span class="line">  <span class="attr">&quot;keywords&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span>				<span class="comment">// 关键字</span></span><br><span class="line">  <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span>					<span class="comment">// 作者</span></span><br><span class="line">  <span class="attr">&quot;license&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ISC&quot;</span><span class="punctuation">,</span>			    <span class="comment">// 许可证</span></span><br><span class="line">  <span class="attr">&quot;bugs&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://github.com/monatheoctocat/my_package/issues&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span>							<span class="comment">// 项目的 bug 报告地址</span></span><br><span class="line">  <span class="attr">&quot;homepage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://github.com/monatheoctocat/my_package&quot;</span><span class="punctuation">,</span> <span class="comment">// 项目的主页地址</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="关于README-md"><a href="#关于README-md" class="headerlink" title="关于README.md"></a>关于<code>README.md</code></h3><p>在项目的根目录下创建<code>README.md</code>作为<code>npm</code>包的自述文件，可以帮助其他人在 <code>npm</code>上找到你的包并在他们的项目中使用你的代码获得良好的体验。该文件可能包含安装、配置和使用包中代码的说明，以及用户可能认为有帮助的任何其他信息。</p>
+<p>你可以创建 README.md 文件并将其添加到包中：</p>
+<ol>
+<li>在文本编辑器中，在您的包根目录中，创建一个名为 <code>README.md</code> 的文件</li>
+<li>在该<code>README.md</code>文件中，添加有关您的包的有用信息。</li>
+<li>保存<code>README.md</code>文件。</li>
+</ol>
+<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><p>将<code>npm</code>包发布到线上进行调试过于繁琐，并且仅为了调试代码而频繁地发布会导致版本号膨胀。所以在正式发布<code>npm</code>包之前，最好在本地进行调试。</p>
+<p>你可以使用 <code>npm link</code>将你的包链接到全局<code>node_modules</code>目录下，之后在将包链接到具体的代码目录下。</p>
+<p>例如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~/projects/node-redis    # go into the package directory</span><br><span class="line">npm link                    # creates global link</span><br><span class="line">cd ~/projects/node-bloggy   # go into some other package directory.</span><br><span class="line">npm link redis              # link-install the package</span><br></pre></td></tr></table></figure>
+
+<p>要解除项目与包的链接，只需要执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm unlink redis</span><br></pre></td></tr></table></figure>
+
+<h2 id="发布-npm-包"><a href="#发布-npm-包" class="headerlink" title="发布 npm 包"></a>发布 npm 包</h2><h3 id="登录-npm-账号"><a href="#登录-npm-账号" class="headerlink" title="登录 npm 账号"></a>登录 npm 账号</h3><ol>
+<li>在登录你的 <code>npm</code> 账号前，请确保切换到官方镜像源：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>登录你的 npm 账号：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>提示你输入用户名，密码和邮箱地址：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm notice Log in on https://registry.npmjs.org/</span><br><span class="line">Username: yourname</span><br><span class="line">Password: *****</span><br><span class="line">Email: (this IS public) youremail</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行发布命令"><a href="#执行发布命令" class="headerlink" title="执行发布命令"></a>执行发布命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新-npm-包版本"><a href="#更新-npm-包版本" class="headerlink" title="更新 npm 包版本"></a>更新 npm 包版本</h2><p>当你对已发布的包进行重大更改时，应该更新版本号，以便将更改的范围传达给依赖你代码的其他人。</p>
+<p>你可以使用以下命令更改<code>package.json</code>中的版本号：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</span><br></pre></td></tr></table></figure>
+
+<p>部分不同选项的作用：</p>
+<ul>
+<li><code>patch</code>： 1.0.0 –&gt; 1.0.1</li>
+<li><code>minor</code>：1.0.0 –&gt; 1.1.0</li>
+<li><code>major</code>:   1.0.0 –&gt; 2.0.0</li>
+</ul>
+<p>更多选项或参数可参考<a class="link"   target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v8/commands/npm-version" >npm version<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="取消发布包"><a href="#取消发布包" class="headerlink" title="取消发布包"></a>取消发布包</h2><h3 id="使用官网"><a href="#使用官网" class="headerlink" title="使用官网"></a>使用官网</h3><ol>
+<li><p>在 npm 的“<a class="link"   target="_blank" rel="noopener" href="https://www.npmjs.com/login" >登录<i class="fas fa-external-link-alt"></i></a>”页面上，输入您的帐户详细信息并单击<strong>“登录”</strong>。</p>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://docs.npmjs.com/shared/user-login.png"
+                      style="width: 200px" 
+                >
+</li>
+<li><p>导航到您要取消发布的包的包页面，替换<code>&lt;your-package-name&gt;</code>为您的包的名称： <code>https://www.npmjs.com/package/&lt;your-package-name&gt;</code></p>
+</li>
+<li><p>单击<strong>设置</strong>。</p>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://docs.npmjs.com/packages-and-modules/securing-your-code/2fa-package-admin.png"
+                      style="width:500px"
+                >
+</li>
+<li><p>在“删除包”下，单击<strong>删除包</strong>。</p>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://docs.npmjs.com/packages-and-modules/deleting-deprecating/delete-package-settings.png"
+                      style="width: 500px"
+                >
+</li>
+<li><p>如果您确定要继续，请输入您的包名称并单击<strong>删除包</strong>。</p>
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://docs.npmjs.com/packages-and-modules/deleting-deprecating/delete-package-confirm.png"
+                      style="width:500px"
+                ></li>
+</ol>
+<h3 id="使用命令行"><a href="#使用命令行" class="headerlink" title="使用命令行"></a>使用命令行</h3><p>要取消发布整个包，请运行以下命令，替换<code>&lt;package-name&gt;</code>为您的包的名称：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm unpublish &lt;package-name&gt; -f</span><br></pre></td></tr></table></figure>
+
+<p>更多操错可参考<a class="link"   target="_blank" rel="noopener" href="https://docs.npmjs.com/unpublishing-packages-from-the-registry" >https://docs.npmjs.com/unpublishing-packages-from-the-registry<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="登录失败"><a href="#登录失败" class="headerlink" title="登录失败"></a>登录失败</h3><p>设置官方镜像源，使用<code>npm login</code>登录的时候记得切换成官方镜像源地址：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+
+<p>设置淘宝镜像源：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure>
+
+<p>查看当前镜像源：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+
+<h3 id="包名被占用"><a href="#包名被占用" class="headerlink" title="包名被占用"></a>包名被占用</h3><p>这是一个常见问题，因为很多人都发包到 npm 上。有时候很难得到你想要的包名。</p>
+<p>为了解决这个问题，npm 允许发包到一个命名空间下。这意味着可以把包发布到你自己的用户名或者组织名下，因此解决了命名问题。</p>
+<p>要发包到一个命名空间下，你需要选择如下其中一种方式：</p>
+<ul>
+<li>手动修改 package.json 中的 name 属性值为 @username&#x2F;package-name 格式</li>
+<li>运行 npm init –scope&#x3D;username 而非 npm init</li>
+</ul>
+<p>如果你的仓库有命名空间，你需要微调一下 publish 命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm publish --access public</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/npm/">#npm</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2019/04/22/vue/vue-cli3-x%E9%85%8D%E7%BD%AE/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">vue-cli3.x config</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="gitalk-comment-container">
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+        <script data-pjax src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script data-pjax>
+          function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+              __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+              Gitalk && new Gitalk({
+                clientID: 'b2e936eea8e5cad0fad7',
+                clientSecret: '37bc21b4a6ff67c2adadd726f6e713279763d8cb',
+                repo: 'debuggerccai.github.io',
+                owner: 'debuggerccai',
+                admin: 'debuggerccai',
+                id: __gitalk__pathname,
+                proxy: '',
+                language: 'en'
+              }).render('gitalk-container');
+            } catch (e) {
+              window.Gitalk = null;
+            }
+          }
+
+          if ('true' === 'true') {
+            const loadGitalkTimeout = setTimeout(() => {
+              loadGitalk();
+              clearTimeout(loadGitalkTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84-npm-%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">创建你的 npm 账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-npm-%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">创建 npm 包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E5%8C%85%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">2.1.</span> <span class="nav-text">创建你的包文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Epackage-json"><span class="nav-number">2.2.</span> <span class="nav-text">关于package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EREADME-md"><span class="nav-number">2.3.</span> <span class="nav-text">关于README.md</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">本地调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83-npm-%E5%8C%85"><span class="nav-number">4.</span> <span class="nav-text">发布 npm 包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E5%BD%95-npm-%E8%B4%A6%E5%8F%B7"><span class="nav-number">4.1.</span> <span class="nav-text">登录 npm 账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E5%8F%91%E5%B8%83%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">执行发布命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0-npm-%E5%8C%85%E7%89%88%E6%9C%AC"><span class="nav-number">5.</span> <span class="nav-text">更新 npm 包版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%8F%91%E5%B8%83%E5%8C%85"><span class="nav-number">6.</span> <span class="nav-text">取消发布包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%98%E7%BD%91"><span class="nav-number">6.1.</span> <span class="nav-text">使用官网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">6.2.</span> <span class="nav-text">使用命令行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-number">7.</span> <span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5"><span class="nav-number">7.1.</span> <span class="nav-text">登录失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%90%8D%E8%A2%AB%E5%8D%A0%E7%94%A8"><span class="nav-number">7.2.</span> <span class="nav-text">包名被占用</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2017</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">lwcai</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
