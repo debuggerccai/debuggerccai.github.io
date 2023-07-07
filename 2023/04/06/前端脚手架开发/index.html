@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="蔡良武在 Github 上的个人博客">
+    <meta name="author" content="lwcai">
+    
+    <title>
+        
+            前端脚手架开发 |
+        
+        Tsai&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/pinterest_profile_image.png","favicon":"/images/favicon.png","avatar":"/images/pinterest_profile_image.png","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"gitalk","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"debuggerccai","github_admins":null,"repository":"debuggerccai.github.io","client_id":"b2e936eea8e5cad0fad7","client_secret":"37bc21b4a6ff67c2adadd726f6e713279763d8cb","proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect","前端开发工程师"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/pinterest_profile_image.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Tsai&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/resumes.pdf"
+                            >
+                                ABOUT ME
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/resumes.pdf">ABOUT ME</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">前端脚手架开发</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/pinterest_profile_image.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">lwcai</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-04-06 16:39:48</span>
+        <span class="mobile">2023-04-06 16:39</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-07-07 17:46:05</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/cli/">cli</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><ul>
+<li>commander：命令行工具</li>
+<li>prompts：交互式命令行工具</li>
+<li>kolorist：修改控制台输出内容样式</li>
+<li>validate-npm-package-name：用于验证npm包名称是否有效</li>
+</ul>
+<h2 id="编写脚本文件"><a href="#编写脚本文件" class="headerlink" title="编写脚本文件"></a>编写脚本文件</h2><p>在<code>package.json</code>中指定项目的可执行文件：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...<span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;bin&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;my-cli&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./bin/index.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在根目录下新建一个<code>bin</code>文件夹，并创建脚本文件<code>index.js</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Command</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;commander&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> prompts = <span class="built_in">require</span>(<span class="string">&#x27;prompts&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs-extra&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> validateProjectName = <span class="built_in">require</span>(<span class="string">&#x27;validate-npm-package-name&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> os = <span class="built_in">require</span>(<span class="string">&#x27;os&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  cyan,</span><br><span class="line">  green,</span><br><span class="line">  magenta,</span><br><span class="line">  red,</span><br><span class="line">  blue,</span><br><span class="line">&#125; = <span class="built_in">require</span>(<span class="string">&#x27;kolorist&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> packageJson = <span class="built_in">require</span>(<span class="string">&#x27;../package.json&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可用的模板</span></span><br><span class="line"><span class="keyword">const</span> templateList = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="title function_">cyan</span>(<span class="string">&#x27;react-app&#x27;</span>),</span><br><span class="line">    <span class="attr">value</span>: <span class="string">&#x27;react-app&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 其它可选项</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">init</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> program = <span class="keyword">new</span> <span class="title class_">Command</span>(packageJson.<span class="property">name</span>)</span><br><span class="line">    .<span class="title function_">version</span>(packageJson.<span class="property">version</span>)</span><br><span class="line">    .<span class="title function_">argument</span>(<span class="string">&#x27;&lt;project-directory&gt;&#x27;</span>)</span><br><span class="line">    .<span class="title function_">action</span>(<span class="keyword">async</span> (name) =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> root = path.<span class="title function_">resolve</span>(name)</span><br><span class="line">      <span class="keyword">const</span> appName = path.<span class="title function_">basename</span>(root)</span><br><span class="line"></span><br><span class="line">      <span class="title function_">checkAppName</span>(appName)</span><br><span class="line">      fs.<span class="title function_">ensureDirSync</span>(name)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">prompts</span>(</span><br><span class="line">          [</span><br><span class="line">            &#123;</span><br><span class="line">              <span class="attr">type</span>: <span class="function">() =&gt;</span> (<span class="title function_">isSafeToCreateProjectIn</span>(root, name) ? <span class="literal">null</span> : <span class="string">&#x27;confirm&#x27;</span>),</span><br><span class="line">              <span class="attr">name</span>: <span class="string">&#x27;overwrite&#x27;</span>,</span><br><span class="line">              <span class="attr">message</span>: <span class="string">&#x27;Remove existing files and continue?&#x27;</span>,</span><br><span class="line">              <span class="attr">initial</span>: <span class="literal">false</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              <span class="attr">type</span>: <span class="function">(<span class="params">_, &#123; overwrite &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (overwrite === <span class="literal">false</span>) &#123;</span><br><span class="line">                  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`<span class="subst">$&#123;red(<span class="string">&#x27;✖&#x27;</span>)&#125;</span> Operation cancelled`</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">              &#125;,</span><br><span class="line">              <span class="attr">name</span>: <span class="string">&#x27;overwriteChecker&#x27;</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              <span class="attr">type</span>: <span class="string">&#x27;select&#x27;</span>,</span><br><span class="line">              <span class="attr">name</span>: <span class="string">&#x27;template&#x27;</span>,</span><br><span class="line">              <span class="attr">message</span>: <span class="string">&#x27;Select a template&#x27;</span>,</span><br><span class="line">              <span class="attr">choices</span>: templateList,</span><br><span class="line">            &#125;,</span><br><span class="line">          ],</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="attr">onCancel</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`<span class="subst">$&#123;red(<span class="string">&#x27;✖&#x27;</span>)&#125;</span> Operation cancelled`</span>)</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;,</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> &#123; template, overwrite &#125; = response</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (overwrite) &#123;</span><br><span class="line">          <span class="title function_">cleanDir</span>(root)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">createApp</span>(root, appName, template)</span><br><span class="line">      &#125; <span class="keyword">catch</span> (cancelled) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(cancelled.<span class="property">message</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">on</span>(<span class="string">&#x27;--help&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">parse</span>(process.<span class="property">argv</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建应用至指定路径，并且将应用名称等信息与模板中预设的package.json合并</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">appPath</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">appName</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">template</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">Promise&lt;void&gt;</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">createApp</span>(<span class="params">appPath, appName, template</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> templatePath = path.<span class="title function_">join</span>(__dirname, <span class="string">`../templates/<span class="subst">$&#123;template&#125;</span>`</span>)</span><br><span class="line">  <span class="keyword">const</span> templateJsonPath = path.<span class="title function_">join</span>(templatePath, <span class="string">&#x27;template.json&#x27;</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> templateJson = &#123;&#125;</span><br><span class="line">  <span class="keyword">if</span> (fs.<span class="title function_">existsSync</span>(templateJsonPath)) &#123;</span><br><span class="line">    <span class="comment">// eslint-disable-next-line global-require,import/no-dynamic-require</span></span><br><span class="line">    templateJson = <span class="built_in">require</span>(templateJsonPath)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> appPackage = &#123;</span><br><span class="line">    <span class="attr">name</span>: appName,</span><br><span class="line">    <span class="attr">version</span>: <span class="string">&#x27;0.1.0&#x27;</span>,</span><br><span class="line">    <span class="attr">private</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> templatePackage = templateJson.<span class="property">package</span> || &#123;&#125;</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">assign</span>(appPackage, templatePackage)</span><br><span class="line"></span><br><span class="line">  fs.<span class="title function_">writeFileSync</span>(</span><br><span class="line">    path.<span class="title function_">join</span>(appPath, <span class="string">&#x27;package.json&#x27;</span>),</span><br><span class="line">    <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(appPackage, <span class="literal">null</span>, <span class="number">2</span>) + os.<span class="property">EOL</span>,</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> templateDir = path.<span class="title function_">join</span>(templatePath, <span class="string">&#x27;template&#x27;</span>)</span><br><span class="line">  <span class="title function_">copyDir</span>(appPath, appName, templateDir).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Success! Now run: &#x27;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  cd <span class="subst">$&#123;appName&#125;</span>`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;  npm install&#x27;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;  npm run dev&#x27;</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 校验包名称是否有效</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">appName</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">checkAppName</span>(<span class="params">appName</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> validationResult = <span class="title function_">validateProjectName</span>(appName)</span><br><span class="line">  <span class="keyword">if</span> (!validationResult.<span class="property">validForNewPackages</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(</span><br><span class="line">      <span class="title function_">red</span>(</span><br><span class="line">        <span class="string">`Cannot create a project named <span class="subst">$&#123;green(</span></span></span><br><span class="line"><span class="subst"><span class="string">          <span class="string">`&quot;<span class="subst">$&#123;appName&#125;</span>&quot;`</span>,</span></span></span><br><span class="line"><span class="subst"><span class="string">        )&#125;</span> because of npm naming restrictions:\n`</span>,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">    [</span><br><span class="line">      ...(validationResult.<span class="property">errors</span> || []),</span><br><span class="line">      ...(validationResult.<span class="property">warnings</span> || []),</span><br><span class="line">    ].<span class="title function_">forEach</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="title function_">red</span>(<span class="string">`  * <span class="subst">$&#123;error&#125;</span>`</span>))</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="title function_">red</span>(<span class="string">&#x27;\nPlease choose a different project name.&#x27;</span>))</span><br><span class="line">    process.<span class="title function_">exit</span>(<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> conflicts = []</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 判断指定路径下的文件夹是否为空</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">root</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">name</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">boolean</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">isSafeToCreateProjectIn</span>(<span class="params">root, name</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> validFiles = [</span><br><span class="line">    <span class="string">&#x27;.DS_Store&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;.git&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;.gitignore&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;.idea&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;README.md&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;package.json&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;package-lock.json&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;yarn-lock.json&#x27;</span>,</span><br><span class="line">  ]</span><br><span class="line">  <span class="keyword">const</span> errorLogFilePatterns = [</span><br><span class="line">    <span class="string">&#x27;npm-debug.log&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;yarn-error.log&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;yarn-debug.log&#x27;</span>,</span><br><span class="line">  ]</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">isErrorLog</span> = (<span class="params">file</span>) =&gt; errorLogFilePatterns.<span class="title function_">some</span>(<span class="function">(<span class="params">pattern</span>) =&gt;</span> file.<span class="title function_">startsWith</span>(pattern))</span><br><span class="line"></span><br><span class="line">  conflicts = fs</span><br><span class="line">    .<span class="title function_">readdirSync</span>(root)</span><br><span class="line">    .<span class="title function_">filter</span>(<span class="function">(<span class="params">file</span>) =&gt;</span> !validFiles.<span class="title function_">includes</span>(file))</span><br><span class="line">    .<span class="title function_">filter</span>(<span class="function">(<span class="params">file</span>) =&gt;</span> !<span class="title function_">isErrorLog</span>(file))</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (conflicts.<span class="property">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">      <span class="string">`The directory <span class="subst">$&#123;green(name)&#125;</span> contains files that could conflict:`</span>,</span><br><span class="line">    )</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    conflicts.<span class="title function_">forEach</span>(<span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> stats = fs.<span class="title function_">lstatSync</span>(path.<span class="title function_">join</span>(root, file))</span><br><span class="line">        <span class="keyword">if</span> (stats.<span class="title function_">isDirectory</span>()) &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  <span class="subst">$&#123;blue(<span class="string">`<span class="subst">$&#123;file&#125;</span>/`</span>)&#125;</span>`</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  <span class="subst">$&#123;file&#125;</span>`</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  <span class="subst">$&#123;file&#125;</span>`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>()</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">      <span class="string">&#x27;Either try using a new directory name, or remove the files listed above.&#x27;</span>,</span><br><span class="line">    )</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  fs.<span class="title function_">readdirSync</span>(root).<span class="title function_">forEach</span>(<span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isErrorLog</span>(file)) &#123;</span><br><span class="line">      fs.<span class="title function_">removeSync</span>(path.<span class="title function_">join</span>(root, file))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 拷贝应用模版至指定路径下</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">appPath</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">appName</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">templateDir</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> &#123;<span class="type">Promise&lt;unknown&gt;</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">copyDir</span>(<span class="params">appPath, appName, templateDir</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (fs.<span class="title function_">existsSync</span>(templateDir)) &#123;</span><br><span class="line">      fs.<span class="title function_">copySync</span>(templateDir, appPath)</span><br><span class="line">      <span class="title function_">resolve</span>()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`Could not locate supplied template: <span class="subst">$&#123;green(templateDir)&#125;</span>`</span>)</span><br><span class="line">      process.<span class="title function_">exit</span>(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 清空指定路径下的所有文件及文件夹</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> <span class="variable">root</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">cleanDir</span>(<span class="params">root</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!fs.<span class="title function_">pathExistsSync</span>(root)) &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  fs.<span class="title function_">readdirSync</span>(root).<span class="title function_">forEach</span>(<span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.<span class="title function_">rmSync</span>(path.<span class="title function_">resolve</span>(root, file), &#123; <span class="attr">recursive</span>: <span class="literal">true</span>, <span class="attr">force</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">init</span>()</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建命令"><a href="#创建命令" class="headerlink" title="创建命令"></a>创建命令</h3><p>使用<code>commander</code>可以快速构建命令行程序：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Command</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;commander&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">init</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> program = <span class="keyword">new</span> <span class="title class_">Command</span>(packageJson.<span class="property">name</span>)</span><br><span class="line">  	<span class="comment">// 配置版本号信息</span></span><br><span class="line">    .<span class="title function_">version</span>(packageJson.<span class="property">version</span>)</span><br><span class="line">  	<span class="comment">// 配置必填参数</span></span><br><span class="line">    .<span class="title function_">argument</span>(<span class="string">&#x27;&lt;project-directory&gt;&#x27;</span>)</span><br><span class="line">  	<span class="comment">// 调用命令后执行任务</span></span><br><span class="line">    .<span class="title function_">action</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">  	<span class="comment">// 完善更多帮助信息</span></span><br><span class="line">    .<span class="title function_">on</span>(<span class="string">&#x27;--help&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    &#125;)</span><br><span class="line">  	<span class="comment">// 解析执行命令时传入的参数</span></span><br><span class="line">    .<span class="title function_">parse</span>(process.<span class="property">argv</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令行交互"><a href="#命令行交互" class="headerlink" title="命令行交互"></a>命令行交互</h3><p>通过使用<code>prompts</code>，可以在命令行中与用户进行交互，获取用户的输入并根据需要执行相应的操作：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">prompts</span>(</span><br><span class="line">  [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="string">&#x27;select&#x27;</span>,</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;template&#x27;</span>,</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&#x27;Select a template&#x27;</span>,</span><br><span class="line">      <span class="attr">choices</span>: templateList,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">onCancel</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">`<span class="subst">$&#123;red(<span class="string">&#x27;✖&#x27;</span>)&#125;</span> Operation cancelled`</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; template &#125; = response</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用模板"><a href="#使用模板" class="headerlink" title="使用模板"></a>使用模板</h3><p>有两种使用模板的方式，并各有优缺点：</p>
+<ul>
+<li>拷贝本地模板<ul>
+<li>优点：<ul>
+<li>离线使用：用户只要安装脚手架以后，即使在没有网络链接的情况下也能够正常使用脚手架和模版。</li>
+<li>快速启动：创建项目时不需要等待下载模板的过程，可以立即开始项目的开发。</li>
+<li>简单维护：模板和脚手架在同一个版本控制系统中，维护和更新都比较方便。可以通过版本控制系统的标签或分支管理模板的不同版本。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>更新困难：当需要更新模板时，需要发布新版本的脚手架。用户在升级脚手架时会受到模板更新的影响，无法选择保留原来的模板。</li>
+<li>模板定制性较差：模板与脚手架耦合在一起，定制模板的难度较大。用户想要对模板进行修改时，需要修改脚手架源码。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>下载远程模版<ul>
+<li>优点：<ul>
+<li>实时更新：模板存储在远程Git仓库中，可以随时更新和维护。用户在创建项目时可以获取到最新的模板。</li>
+<li>独立维护：模板和脚手架分离，可以独立维护模板。可以针对不同的项目需求，使用不同的Git分支或标签管理不同版本的模板。</li>
+<li>定制性强：用户可以根据项目需求，对远程模板进行定制化修改，而不需要修改脚手架源码。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>依赖网络：用户需要有可靠的网络连接，才能下载远程模板。</li>
+<li>下载时间：创建项目时需要从远程Git仓库下载模板，这可能需要一定的时间，特别是在网络较慢的情况下。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="拷贝本地模板"><a href="#拷贝本地模板" class="headerlink" title="拷贝本地模板"></a>拷贝本地模板</h4><p>在根目录下创建<code>templates</code>文件夹，用于存放模板：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">templates</span><br><span class="line">└── react-app-ts</span><br><span class="line">    ├── template</span><br><span class="line">    │   ├── commitlint.config.js</span><br><span class="line">    │   ├── react-app-env.d.ts</span><br><span class="line">    │   ├── src</span><br><span class="line">    │   ├── tsconfig.json</span><br><span class="line">    │   └── webpack</span><br><span class="line">    └── template.json</span><br></pre></td></tr></table></figure>
+
+<p>将目标模板下的文件以及文件夹拷贝至指定路径下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">copyDir</span>(<span class="params">appPath, appName, templateDir</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (fs.<span class="title function_">existsSync</span>(templateDir)) &#123;</span><br><span class="line">      fs.<span class="title function_">copySync</span>(templateDir, appPath)</span><br><span class="line">      <span class="title function_">resolve</span>()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">`Could not locate supplied template: <span class="subst">$&#123;green(templateDir)&#125;</span>`</span>)</span><br><span class="line">      process.<span class="title function_">exit</span>(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="下载远程模版"><a href="#下载远程模版" class="headerlink" title="下载远程模版"></a>下载远程模版</h4><p><code>download-git-repo</code> 是一个专门用于从 Git 仓库下载模板的库。并且可以使用<code>ora</code>在命令行界面中显示加载动画和提示信息，以增强用户体验：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> download = <span class="built_in">require</span>(<span class="string">&#x27;download-git-repo&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> ora = <span class="built_in">require</span>(<span class="string">&#x27;ora&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">downloadTemplate</span>(<span class="params">appPath, appName</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> spinner = <span class="title function_">ora</span>(<span class="string">&#x27;初始化项目&#x27;</span>)</span><br><span class="line">  spinner.<span class="title function_">start</span>()</span><br><span class="line">  spinner.<span class="property">text</span> = <span class="string">`项目<span class="subst">$&#123;appName&#125;</span>初始化中`</span></span><br><span class="line">  spinner.<span class="property">spinner</span> = &#123;</span><br><span class="line">    <span class="attr">interval</span>: <span class="number">120</span>,</span><br><span class="line">    <span class="attr">frames</span>: [<span class="string">&#x27;.  &#x27;</span>, <span class="string">&#x27;.. &#x27;</span>, <span class="string">&#x27;...&#x27;</span>, <span class="string">&#x27;.. &#x27;</span>],</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">download</span>(<span class="string">&#x27;direct:https://github.com/xxx.git&#x27;</span>, appPath, &#123; <span class="attr">clone</span>: <span class="literal">true</span> &#125;, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        spinner.<span class="title function_">fail</span>(<span class="string">&#x27;项目初始化失败&#x27;</span>)</span><br><span class="line">        <span class="title function_">reject</span>(err)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        spinner.<span class="title function_">succeed</span>(<span class="string">&#x27;项目初始化成功&#x27;</span>)</span><br><span class="line">        <span class="title function_">resolve</span>()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其它用于下载远程模板的Node.js库：<code>got</code>一个通用的 HTTP 请求库，可以用于下载任何远程资源。</p>
+<h2 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h2><p>执行命令<code>npm link</code>即可将脚手架链接到全局<code>node_modules</code>目录下，执行以下命令开始调试：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">my-cli your-project-directory</span><br></pre></td></tr></table></figure>
+
+<img  
+                     lazyload
+                     alt="image"
+                     data-src="https://github.com/debuggerccai/assets/raw/master/images/run-cli.png"
+                      style="width: 500px" 
+                >
+
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>登录你的 npm 账号：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm login --registry https://www.npmjs.com</span><br></pre></td></tr></table></figure>
+
+<p>执行发布命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/cli/">#cli</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/03/10/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93%E5%BC%80%E5%8F%91/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">前端工具库开发</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="gitalk-comment-container">
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+        <script data-pjax src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script data-pjax>
+          function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+              __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+              Gitalk && new Gitalk({
+                clientID: 'b2e936eea8e5cad0fad7',
+                clientSecret: '37bc21b4a6ff67c2adadd726f6e713279763d8cb',
+                repo: 'debuggerccai.github.io',
+                owner: 'debuggerccai',
+                admin: 'debuggerccai',
+                id: __gitalk__pathname,
+                proxy: '',
+                language: 'en'
+              }).render('gitalk-container');
+            } catch (e) {
+              window.Gitalk = null;
+            }
+          }
+
+          if ('true' === 'true') {
+            const loadGitalkTimeout = setTimeout(() => {
+              loadGitalk();
+              clearTimeout(loadGitalkTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">编写脚本文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%91%BD%E4%BB%A4"><span class="nav-number">3.1.</span> <span class="nav-text">创建命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BA%A4%E4%BA%92"><span class="nav-number">3.2.</span> <span class="nav-text">命令行交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="nav-number">3.3.</span> <span class="nav-text">使用模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%B7%E8%B4%9D%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%9D%BF"><span class="nav-number">3.3.1.</span> <span class="nav-text">拷贝本地模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BF%9C%E7%A8%8B%E6%A8%A1%E7%89%88"><span class="nav-number">3.3.2.</span> <span class="nav-text">下载远程模版</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">本地调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83"><span class="nav-number">5.</span> <span class="nav-text">发布</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2017</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">lwcai</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

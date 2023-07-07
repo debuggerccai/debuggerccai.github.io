@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="蔡良武在 Github 上的个人博客">
+    <meta name="author" content="lwcai">
+    
+    <title>
+        
+            前端工具库开发 |
+        
+        Tsai&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/pinterest_profile_image.png","favicon":"/images/favicon.png","avatar":"/images/pinterest_profile_image.png","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"gitalk","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":"debuggerccai","github_admins":null,"repository":"debuggerccai.github.io","client_id":"b2e936eea8e5cad0fad7","client_secret":"37bc21b4a6ff67c2adadd726f6e713279763d8cb","proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect","前端开发工程师"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/pinterest_profile_image.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Tsai&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about/resumes.pdf"
+                            >
+                                ABOUT ME
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about/resumes.pdf">ABOUT ME</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">前端工具库开发</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/pinterest_profile_image.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">lwcai</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-10 16:39:48</span>
+        <span class="mobile">2023-03-10 16:39</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-07-07 17:46:05</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/npm/">npm</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.6k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文将介绍如何开发一个前端工具库，并使用<code>rollup</code>对代码进行打包，最终将工具库发布到<code>npm</code></p>
+<blockquote>
+<p>Rollup 是一个 JavaScript 模块打包工具，可以将多个小的代码片段编译为完整的库和应用。<a class="link"   target="_blank" rel="noopener" href="https://rollupjs.org/" >文档<i class="fas fa-external-link-alt"></i></a></p>
+</blockquote>
+<p>想要完整地发布一个工具库，分为以下步骤：</p>
+<ol>
+<li>初始化项目，并安装相关依赖</li>
+<li>修改<code>package.json</code>中的相关配置</li>
+<li>如果你的工具包是使用<code>typescript</code>编写的，还需要额外配置一下<code>tsconfig.json</code></li>
+<li>使用<code>rollup</code>打包代码</li>
+<li>发布<code>npm</code>包</li>
+</ol>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><ul>
+<li>rollup：用于打包 JavaScript 应用程序和库的模块打包器</li>
+<li>rollup-plugin-typescript2：用于在 Rollup 构建过程中编译 TypeScript 代码</li>
+<li>typescript：rollup-plugin-typescript2 的对等依赖项</li>
+<li>tslib：rollup-plugin-typescript2 的对等依赖项</li>
+<li>@rollup&#x2F;plugin-json：用于将 .json 文件转换为 ES6 模块</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i rollup rollup-plugin-typescript2 tslib typescript @rollup/plugin-json -D</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>配置<code>package.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my-lib&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lib/index.js&quot;</span><span class="punctuation">,</span> <span class="comment">// 项目入口文件， commonjs 规范的代码</span></span><br><span class="line">  <span class="attr">&quot;module&quot;</span><span class="punctuation">:</span> <span class="string">&quot;es/index.js&quot;</span><span class="punctuation">,</span> <span class="comment">// esm 规范的代码的入口文件，优先级比 main 高</span></span><br><span class="line">  <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;module&quot;</span><span class="punctuation">,</span> <span class="comment">// 定义 package.json 文件和该文件所在目录根目录中.js文件和无拓展名文件的处理方式。值为 moduel 则当作 es 模块处理；值为 commonjs 则被当作commonJs模块处理</span></span><br><span class="line">  <span class="attr">&quot;typings&quot;</span><span class="punctuation">:</span> <span class="string">&quot;index.d.ts&quot;</span><span class="punctuation">,</span> <span class="comment">// .d.ts声明文件的入口</span></span><br><span class="line">  <span class="attr">&quot;files&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;es&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;lib&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span> <span class="comment">// 项目中要发布的文件列表</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;rollup -c rollup.config.ts --configPlugin typescript --environment NODE_ENV=production&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;rollup -c rollup.config.ts --configPlugin typescript&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>配置<code>rollup.config.ts</code>：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">import json from &#x27;@rollup/plugin-json&#x27;</span><br><span class="line">import typescript from &#x27;rollup-plugin-typescript2&#x27;</span><br><span class="line">import <span class="punctuation">&#123;</span> readFileSync <span class="punctuation">&#125;</span> from &#x27;fs&#x27;</span><br><span class="line"></span><br><span class="line">export default <span class="punctuation">&#123;</span></span><br><span class="line">    input<span class="punctuation">:</span> &#x27;src/index.ts&#x27;<span class="punctuation">,</span></span><br><span class="line">    output<span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            name<span class="punctuation">:</span> pkg.name<span class="punctuation">,</span></span><br><span class="line">            file<span class="punctuation">:</span> pkg.main<span class="punctuation">,</span></span><br><span class="line">            format<span class="punctuation">:</span> &#x27;umd&#x27;<span class="punctuation">,</span></span><br><span class="line">            sourcemap<span class="punctuation">:</span> !isProduction<span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            name<span class="punctuation">:</span> pkg.name<span class="punctuation">,</span></span><br><span class="line">            file<span class="punctuation">:</span> pkg.module<span class="punctuation">,</span></span><br><span class="line">            format<span class="punctuation">:</span> &#x27;es&#x27;<span class="punctuation">,</span></span><br><span class="line">            sourcemap<span class="punctuation">:</span> !isProduction<span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    plugins<span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        json()<span class="punctuation">,</span></span><br><span class="line">        typescript()<span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用第三方类库"><a href="#使用第三方类库" class="headerlink" title="使用第三方类库"></a>使用第三方类库</h2><p>我们在开发过程中，可能会依赖一些外部类库，如：<code>lodash</code>、<code>react</code>。</p>
+<p>为了保证其中的模块能够正常的，通常都会需要使用到<code>@rollup/plugin-commonjs</code>。该插件支持将 <code>CommonJS</code> 模块转换为<code>ES6</code>，可以帮助我们在项目中使用<code>commonjs</code>规范的文件&#x2F;模块。</p>
+<p>另外，我们在打包的时候应该注意保持这些类库的外部引用状态，并告诉<code>rollup</code>如何正确的处理这些依赖。</p>
+<p>最后，为了确保这些外部类库的代码不会被共同打包到<code>bundle.js</code>文件中。可以使用<code>external</code>属性，告诉<code>rollup</code>哪些是外部的库，不需要对这些外部类库进行打包。</p>
+<p>安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install @rollup/plugin-commonjs @rollup/plugin-node-resolve --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> commonjs <span class="keyword">from</span> <span class="string">&#x27;@rollup/plugin-commonjs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; nodeResolve &#125; <span class="keyword">from</span> <span class="string">&#x27;@rollup/plugin-node-resolve&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">input</span>: <span class="string">&#x27;src/index.js&#x27;</span>,</span><br><span class="line">  <span class="attr">output</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">      <span class="attr">format</span>: <span class="string">&#x27;umd&#x27;</span>,</span><br><span class="line">      <span class="attr">globals</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;lodash&#x27;</span>: <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">   	<span class="title function_">nodeResolve</span>(),</span><br><span class="line">    <span class="title function_">commonjs</span>()</span><br><span class="line">  ],</span><br><span class="line">   <span class="attr">external</span>: [<span class="string">&#x27;lodash&#x27;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tree-Shaking-amp-副作用代码"><a href="#Tree-Shaking-amp-副作用代码" class="headerlink" title="Tree Shaking &amp; 副作用代码"></a>Tree Shaking &amp; 副作用代码</h2><p>在使用<code>rollup</code>进行生产构建的时候，会自动开启<code>tree shaking</code>，其本质是借助<code>ES Module的静态分析</code>来消除无用的js代码。无用代码有以下特征：</p>
+<ul>
+<li>代码不会被执行到</li>
+<li>代码执行的结果不会被用到</li>
+<li>代码只影响死变量</li>
+</ul>
+<p>为了更直观的体会<code>tree shaking</code>的作用，我们可以看看<code>rollup</code>官方示例：</p>
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TREE-SHAKING</span></span><br><span class="line"><span class="keyword">import</span> &#123; cube &#125; <span class="keyword">from</span> <span class="string">&#x27;./maths.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cube</span>(<span class="number">5</span>)); <span class="comment">// 125</span></span><br></pre></td></tr></table></figure>
+
+<p>maths.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// This function isn&#x27;t used anywhere, so</span></span><br><span class="line"><span class="comment">// Rollup excludes it from the bundle...</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">square</span> = x =&gt; x * x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// This function gets included</span></span><br><span class="line"><span class="comment">// rewrite this as `square(x) * x`</span></span><br><span class="line"><span class="comment">// and see what happens!</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">cube</span> = x =&gt; x * x * x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// This &quot;side effect&quot; creates a global</span></span><br><span class="line"><span class="comment">// variable and will not be removed.</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">effect1</span> = <span class="string">&#x27;created&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> includeEffect = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (includeEffect) &#123;</span><br><span class="line">	<span class="comment">// On the other hand, this is never</span></span><br><span class="line">	<span class="comment">// executed and thus removed.</span></span><br><span class="line">	<span class="variable language_">window</span>.<span class="property">effect1</span> = <span class="string">&#x27;not created&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>bundle comes out:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// maths.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// This function gets included</span></span><br><span class="line"><span class="comment">// rewrite this as `square(x) * x`</span></span><br><span class="line"><span class="comment">// and see what happens!</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">cube</span> = x =&gt; x * x * x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// This &quot;side effect&quot; creates a global</span></span><br><span class="line"><span class="comment">// variable and will not be removed.</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">effect1</span> = <span class="string">&#x27;created&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TREE-SHAKING</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cube</span>(<span class="number">5</span>)); <span class="comment">// 125</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，没有被使用到的代码都被’摇’掉了。可是产生了副作用的一段代码仍然被保留了下来：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">window.effect1 = &#x27;created&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>以下操作同样会产生副作用：</p>
+<ul>
+<li><code>global</code>, <code>document</code>, <code>window</code>, 全局变量修改，如<code>window.xxx = xx</code></li>
+<li><code>console.log</code>，<code>history.pushState</code>等方法调用</li>
+<li>未声明的变量，如<code>a = 1</code></li>
+</ul>
+<h2 id="处理副作用代码"><a href="#处理副作用代码" class="headerlink" title="处理副作用代码"></a>处理副作用代码</h2><p>有时候，我们并不希望意外的副作用代码被保留下来，以此避免产生一些不必要的错误。</p>
+<p><strong>treeshake.annotations</strong></p>
+<p>在代码注释中忽略副作用</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*@__PURE__*/</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;side-effect&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Impure</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;side-effect&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*@__PURE__*/</span> <span class="keyword">new</span> <span class="title class_">Impure</span>();</span><br></pre></td></tr></table></figure>
+
+<p><strong>treeshake.moduleSideEffects</strong></p>
+<p>忽略模块的副作用</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// input file</span></span><br><span class="line"><span class="keyword">import</span> &#123; unused &#125; <span class="keyword">from</span> <span class="string">&#x27;external-a&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;external-b&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">42</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// output with treeshake.moduleSideEffects === true</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;external-a&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;external-b&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">42</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// output with treeshake.moduleSideEffects === false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">42</span>);</span><br></pre></td></tr></table></figure>
+
+<p>更多选项请参考<a class="link"   target="_blank" rel="noopener" href="https://rollupjs.org/configuration-options/#treeshake" >官方文档<i class="fas fa-external-link-alt"></i></a>。使用配置项：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// rollup.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">  <span class="attr">treeshake</span>: &#123;</span><br><span class="line">  	<span class="attr">propertyReadSideEffects</span>: <span class="literal">false</span>,</span><br><span class="line">  	<span class="attr">moduleSideEffects</span>: <span class="literal">false</span>,</span><br><span class="line">  	<span class="comment">// ...</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示</strong>：使用<code>SideEffects</code>前请确保你的代码真的没有副作用，否则打包的时候会误删掉那些有副作用的代码</p>
+<h2 id="生成声明文件"><a href="#生成声明文件" class="headerlink" title="生成声明文件"></a>生成声明文件</h2><p>由于我们使用了<code>typescript</code>，在发布代码之前，也应该让同样使用<code>typescript</code>的用户能够进行类型提示。</p>
+<p>这里我们使用<code>rollup-plugin-dts</code>，该插件能够汇总你的<code>.d.ts</code>定义文件。该插件会自动将任何外部库（<code>@types</code>例如）标记为<code>external</code>，因此这些库将被排除在捆绑之外。</p>
+<p>安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save-dev rollup-plugin-dts</span><br></pre></td></tr></table></figure>
+
+<p>将其添加到<code>rollup.config.js</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> [</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">input</span>: <span class="string">&quot;./my-input/index.d.ts&quot;</span>,</span><br><span class="line">    <span class="attr">output</span>: [&#123; <span class="attr">file</span>: <span class="string">&quot;dist/my-library.d.ts&quot;</span>, <span class="attr">format</span>: <span class="string">&quot;es&quot;</span> &#125;],</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="title function_">dts</span>()],</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>并且修改<code>package.json</code>配置项：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;types&quot;</span><span class="punctuation">:</span> <span class="string">&quot;dist/my-library.d.ts&quot;</span><span class="punctuation">,</span> <span class="comment">// 用于指定包含项目的类型声明文件的目录</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;typings&quot;</span><span class="punctuation">:</span> <span class="string">&quot;dist/my-library.d.ts&quot;</span> <span class="comment">// 用于指定包含项目类型声明文件的文件名</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="执行构建命令"><a href="#执行构建命令" class="headerlink" title="执行构建命令"></a>执行构建命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;rollup -c rollup.config.ts --environment NODE_ENV=production --configPlugin typescript&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/npm/">#npm</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/2023/04/06/%E5%89%8D%E7%AB%AF%E8%84%9A%E6%89%8B%E6%9E%B6%E5%BC%80%E5%8F%91/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">前端脚手架开发</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/03/10/npm/npm%E5%8C%85%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">npm 包发布流程</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;Comments
+    </div>
+    
+        
+            
+
+    <div class="gitalk-comment-container">
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+        <script data-pjax src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script data-pjax>
+          function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+              __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+              Gitalk && new Gitalk({
+                clientID: 'b2e936eea8e5cad0fad7',
+                clientSecret: '37bc21b4a6ff67c2adadd726f6e713279763d8cb',
+                repo: 'debuggerccai.github.io',
+                owner: 'debuggerccai',
+                admin: 'debuggerccai',
+                id: __gitalk__pathname,
+                proxy: '',
+                language: 'en'
+              }).render('gitalk-container');
+            } catch (e) {
+              window.Gitalk = null;
+            }
+          }
+
+          if ('true' === 'true') {
+            const loadGitalkTimeout = setTimeout(() => {
+              loadGitalk();
+              clearTimeout(loadGitalkTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E7%B1%BB%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">使用第三方类库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree-Shaking-amp-%E5%89%AF%E4%BD%9C%E7%94%A8%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">Tree Shaking &amp; 副作用代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%89%AF%E4%BD%9C%E7%94%A8%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">处理副作用代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">生成声明文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%9E%84%E5%BB%BA%E5%91%BD%E4%BB%A4"><span class="nav-number">8.</span> <span class="nav-text">执行构建命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83"><span class="nav-number">9.</span> <span class="nav-text">发布</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2017</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">lwcai</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/local-search.js"></script>
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//unpkg.com/hexo-theme-keep@3.6.1/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
